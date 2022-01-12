@@ -36,7 +36,7 @@ jobs:
     timeout-minutes: 5
     services:
       mcserver:
-        image: darrenwjlau/bassebombecraft/minecraft:latest
+        image: darrenwjlau/bassebombecraft:minecraft_latest
         ports:
           - 25565:25565
         options: --name minecraftserver
