@@ -16,7 +16,10 @@ jobs:
     steps:    
       - name: Checkout
         uses: actions/checkout@v2
-
+      
+      - name: Install wget
+        run: apt install wget
+        
       - name: DockerHub login
         run: docker login -u $DOCKER_USER -p ${{ secrets.DOCKER_PASSWORD }}
 
