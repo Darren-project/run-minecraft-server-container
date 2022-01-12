@@ -4,7 +4,8 @@ ARG MOD_JAR
 ARG MOD_URL
 ARG MC_VERSION
 ARG FORGE_VERSION
- 
+
+RUN sudo apt install wget
 RUN mkdir -m 777 /data/mods \
   && chown minecraft:minecraft /data/mods \
   && wget -P /data/mods $MOD_URL/$MOD_JAR \
