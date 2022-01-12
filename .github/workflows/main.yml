@@ -24,10 +24,10 @@ jobs:
         run: docker build . --build-arg MOD_JAR=$MOD_JAR --build-arg MOD_URL=$MOD_URL --build-arg MC_VERSION=$MC_VERSION --build-arg FORGE_VERSION=$FORGE_VERSION --file Dockerfile --tag darrenwjlau/bassebombecraft/minecraft:${{ github.sha }} --tag darrenwjlau/bassebombecraft/minecraft:latest
 
       - name: Push image
-        run: docker push darrenwjlau/bassebombecraft/minecraft:${{ github.sha }}
+        run: docker push darrenwjlau/bassebombecraft:minecraft:${{ github.sha }}
 
       - name: Push image
-        run: docker push darrenwjlau/bassebombecraft/minecraft:latest
+        run: docker push darrenwjlau/bassebombecraft:minecraft:latest
 
   test_mod:
     name: Test mod in server 
