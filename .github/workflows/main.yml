@@ -6,7 +6,7 @@ jobs:
     name: Create container with mod
     runs-on: ubuntu-latest
     env:
-      DOCKER_USER: thrane
+      DOCKER_USER: darrenwjlau
       DOCKER_BUILDKIT: 1
       MOD_JAR: BasseBombeCraft-1.15.2-1.42-server.jar 
       MOD_URL: https://github.com/athrane/bassebombecraft/releases/download/1.42.1/
