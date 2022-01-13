@@ -3,6 +3,6 @@ ADD https://www.google.com/search?q=random+number+generator&oq=random+number+&aq
 ARG DEBIAN_FRONTEND=noninteractive
 RUN whoami && apt update && apt -y install wget python3-pip build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev openjdk-11-jre-headless
 RUN cd /tmp && wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz && tar -xvf Python-3.8.3.tgz && echo Running-ls && ls && cd Python-3.8.3 && ./configure --enable-optimizations && make altinstall
-RUN mkdir minecraft && cd minecraft && wget https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.16.5-794.jar && mv paper-1.16.5-794.jar paper.jar && ls && cd .. && mv eula.txt minecraft/eula.txt
+RUN mkdir minecraft && cd minecraft && wget https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.16.5-794.jar && mv paper-1.16.5-794.jar paper.jar && ls && cd .. && wget https://raw.githubusercontent.com/mickeydarrenlau/run-minecraft-server-container/master/eula.txt && mv eula.txt minecraft/eula.txt
 WORKDIR minecraft
 ENTRYPOINT java -jar -Xmx400M -Xms400M paper.jar
