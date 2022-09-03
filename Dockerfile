@@ -5,4 +5,4 @@ RUN whoami && apt update && apt -y install wget openjdk-11-jre-headless
 
 RUN mkdir minecraft && cd minecraft && wget https://papermc.io/api/v2/projects/paper/versions/1.16.5/builds/794/downloads/paper-1.16.5-794.jar && mv paper-1.16.5-794.jar paper.jar && ls && cd .. && wget https://raw.githubusercontent.com/mickeydarrenlau/run-minecraft-server-container/master/eula.txt && mv eula.txt minecraft/eula.txt
 WORKDIR minecraft
-ENTRYPOINT java -jar -Xmx300M -Xms300M paper.jar nogui
+ENTRYPOINT java -jar -Xmx500M -Xms500M paper.jar nogui
