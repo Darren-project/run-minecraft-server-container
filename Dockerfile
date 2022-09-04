@@ -3,6 +3,6 @@ ADD https://www.google.com/search?q=random+number+generator&oq=random+number+&aq
 ARG DEBIAN_FRONTEND=noninteractive
 RUN whoami && apt update && apt -y install wget openjdk-11-jre-headless
 
-RUN mkdir minecraft && cd minecraft && wget https://api.purpurmc.org/v2/purpur/1.16.5/1171/download && mv download server.jar && ls && cd .. && wget https://raw.githubusercontent.com/mickeydarrenlau/run-minecraft-server-container/master/eula.txt && mv eula.txt minecraft/eula.txt
+RUN cd minecraft && wget https://api.purpurmc.org/v2/purpur/1.16.5/1171/download && mv download server.jar && ls && cd .. && wget https://raw.githubusercontent.com/mickeydarrenlau/run-minecraft-server-container/master/eula.txt && mv eula.txt minecraft/eula.txt
 WORKDIR minecraft
 ENTRYPOINT java -Xmx500M -Xms500M -jar  server.jar nogui
